@@ -1,7 +1,7 @@
 # merge_randomForest_adaboost_GBDT
 Merge algorithms of random forest, adaboost and DBDT together into one by two methods:
 
-1.	Simplified:
+1. Simplified:
 
 i.	Create “random forest” which includes n_1 “big Trees”;
 
@@ -11,7 +11,7 @@ iii.	Each tree in “GBDT” is trained by “sample_weight” according to “A
 
 Note: this method seems to run well until now;
 
-2.	Completed: 
+2. Completed: 
 
 i.	Create “random forest” which includes n_1 “big Trees”;
 
