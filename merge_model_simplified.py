@@ -7,7 +7,7 @@ from sklearn.datasets import make_hastie_10_2
 from sklearn import linear_model
 import matplotlib.pyplot as plt
 
-class mergeModelSimplied():
+class mergeModelSimplified():
     def __init__(self,n_random_forest=100,depth_random_forest=8,max_features=8,\
                  n_adaboost=100,n_GBDT=50,depth_GBDT=5,learning_ratio=0.1):
         self.n_random_forest=n_random_forest
