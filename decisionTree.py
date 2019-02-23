@@ -111,7 +111,7 @@ class decision_tree():
             else:
                 return round(data['quality'].mean())
         featureBest=self.type_split(data)        
-        if len(featureBest)>1:
+        if self.treeType=='cart':
             valueBest=featureBest[1]
             featureBest=featureBest[0]            
             Tree={featureBest:{}}
@@ -127,8 +127,7 @@ class decision_tree():
             else:
                 if len(dataRight[featureBest].unique())<2:
                     del dataRight[featureBest]
-                Tree[featureBest]['not_'+valueBest]=self.create_tree(dataRight)
-                
+                Tree[featureBest]['not_'+valueBest]=self.create_tree(dataRight)                
         else:
             Tree={featureBest:{}}
             values=data[featureBest].unique()
