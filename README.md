@@ -7,7 +7,7 @@ useful information that is really used to predict for future new data;
 ![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/data2decision_tree.png)
 
 1.2 How to build it, i.e. how to arange features(columns' names of "Data") on the tree, some features at first
-layers or latters? Coming to th decision tree in Fig_1, why is "outlook" on the top rather than "Humidity" or "Wind"? 
+layers or latters? Coming to the decision tree in Fig_1, why is "outlook" on the top rather than "Humidity" or "Wind"? 
 In the fact the top one is selected by certain algorithms, such as ID3, C4.5, Cart and so on.
 
 1.2.1 ID3
