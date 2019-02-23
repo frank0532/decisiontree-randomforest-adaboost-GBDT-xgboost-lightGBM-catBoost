@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jan 31 12:48:20 2019
-
-@author: 10155195
-"""
 
 import pandas as pd
 import numpy as np
@@ -26,31 +21,7 @@ class adaboost():
         learnRatio=0.007
         for _ in range(self.n_estimators):
             if self.type_fit=='regression':
-                cdf=np.cumsum(w)
-                cdf/=cdf[-1]
-                random_state=np.random.RandomState(0)
-                uniform_samples=random_state.random_sample(X.shape[0])
-                bootstrap_idx=cdf.searchsorted(uniform_samples,side='right')
-                bootstrap_idx=np.array(bootstrap_idx,copy=False)
-                rawTree=DecisionTreeRegressor(max_depth=self.max_depth)
-                rawTree.fit(X[bootstrap_idx],y[bootstrap_idx],sample_weight=w[bootstrap_idx])
-                self.trees.append(rawTree)
-                predi=rawTree.predict(X)   
-                error_vect=np.abs(predi-y)
-                error_max=error_vect.max()
-                error_vect/=error_max
-#                if self.loss=='square':
-#                    error_vect**=2
-#                elif self.loss=='exponential':
-#                error_vect**=2
-                error_vect=1.-np.exp(-error_vect)
-                err=(w*error_vect).sum()          
-                beta=err/(1.-err)
-                alpha=learnRatio*np.log(1./beta)
-                self.alphas.append(alpha)
-                w*=np.power(beta,(1.-error_vect)*learnRatio)
-                w=w/w.sum()
-
+                pass
             else:
                 rawTree=DecisionTreeClassifier(max_depth=self.max_depth)
                 rawTree.fit(X,y,sample_weight=w)
@@ -68,19 +39,7 @@ class adaboost():
         Ltest=len(X)
         preds=np.zeros(Ltest)
         if self.type_fit=='regression':
-            if len(self.alphas)<2:
-                return self.trees[0].predict(X)
-            else:
-                preds=[]
-                for treei in self.trees:
-                    preds.append(treei.predict(X))
-                preds=np.array(preds).T
-                sorted_idx=np.argsort(preds,axis=1)
-                weight_cdf=np.cumsum(np.array(self.alphas)[sorted_idx],axis=1)
-                median_or_above=(weight_cdf>=0.5)*weight_cdf[:,-1][:,np.newaxis]
-                median_idx=median_or_above.argmax(axis=1)                
-                median_estimators=sorted_idx[np.arange(X.shape[0]),median_idx]
-                return preds[np.arange(X.shape[0]), median_estimators]
+            pass
         else:
             for i in range(self.n_estimators):
                 predi=self.trees[i].predict(X)
@@ -114,26 +73,6 @@ if __name__=='__main__':
     fig.set_ylabel('precision',fontsize=12)
     fig.set_title('adaboost training',fontsize=16)
 
-#    #regression
-#    data=pd.read_csv('E:/codes/housing.csv')
-#    data=data.sample(frac=1.0,replace=False)
-#    splitPoint=len(data)//5
-#    Xtest,Xtrain,ytest,ytrain=data.iloc[:splitPoint,:-1].values,data.iloc[splitPoint:,:-1].values,\
-#        data.iloc[:splitPoint:,-1].values,data.iloc[splitPoint:,-1].values
-#    error_trains,error_tests=[],[]
-#    roundsRange=range(1,5000,200)
-#    for ni in roundsRange:
-#        adbi=adaboost('regression',ni,3)
-#        adbi.fit(Xtrain,ytrain)
-#        error_trains.append(np.mean((ytrain-adbi.predict(Xtrain))**2))
-#        error_tests.append(np.mean((ytest-adbi.predict(Xtest))**2))
-#    errors=pd.DataFrame([error_trains,error_tests],index=['train','test']).T
-#    fig=errors.plot(figsize=(15,8),linewidth=3,color=['red','blue'],grid=True,)
-#    fig.set_xlabel('boost numbers')
-#    fig.set_xticks(range(len(roundsRange)))
-#    fig.set_xticklabels(roundsRange)
-#    fig.set_ylabel('Error')
-#    fig.set_title('Adaboost',fontsize=16)
 
     
 
