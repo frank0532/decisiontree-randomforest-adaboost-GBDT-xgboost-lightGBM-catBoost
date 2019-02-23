@@ -2,7 +2,7 @@
 
 ## 1. Decision tree, code in "decisionTree.py"
 
-### 1.1 What is decision tree? Build a "if-elif-else" condition tree according to some certain data which contains 
+### 1.1 What is decision tree? Build an "if-elif-else" condition tree according to some certain data which contains 
 useful information that is really used to predict for future new data;
 >> ![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/data2decision_tree.png)
 
