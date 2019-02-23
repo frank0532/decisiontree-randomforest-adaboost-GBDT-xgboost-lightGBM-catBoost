@@ -25,7 +25,22 @@ Each new data matrix "Di" (and its related label) can be used to train a decisio
 
 ## 3. Adaboost, code in "adaboost.py"
 
-As random forest, adaboost also has many decision trees but difference is that these decision trees are dependent one by one in order because of the dependent sample weights for different decision trees.
+As random forest, adaboost also has many decision trees but difference is that these decision trees are dependent one by one in order because of the dependent sample weights for different decision trees. Take for example, an adaboost is formed by just 3 decision trees as below.
+
+>> ![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/adaboost.png)
+
+Training(mainly used for classifier, label is '1' or '-1'): the first decision tree is trained just as common decision tree because weights of all samples are the same (that is w1), and then get α1（details would be explained later）; the second decision tree is trained with sample weights:w2 which is updated by w1, label, predict1(the fisrt decision tree's predict) and α1, and then also get α2; the third decision tree is trained like the second one, and also get α3.
+
+Predicting: the first decision tree predicts a new sample as predict1, the second decision tree predicts it as predict2 and also predict3; then if α1*predict1+α2*predict2+α3*predict3 >0, the label for this new sample should be '1',  or it should be '-1'.
+
+Then what is α and how to get it?
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/alpha.png)
+
+At last why α and w should be like that?
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/deduce-fx.png)
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/deduce-alpha-w.png)
+
+
 
 
 
