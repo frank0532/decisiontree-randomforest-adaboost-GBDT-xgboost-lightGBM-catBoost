@@ -40,8 +40,10 @@ At last why α and w should be like that?
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/deduce-fx.png)
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/deduce-alpha-w.png)
 
+## 3. GBDT, code in "GBDT.py" and "GBDT_LR.py"
 
-
+As both random forest and adaboost, GBDT also has many decision trees but the special is that the labelS for each tree are different and different labels for these decision trees are dependent in order. Take for example, GBDT is formed by just 3 decision trees as below.
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/GBDT.png)
 
 
 
