@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Feb  3 14:41:13 2019
 
-@author: 10155195
-"""
 from sklearn.linear_model import LogisticRegression
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
