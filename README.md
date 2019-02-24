@@ -84,6 +84,8 @@ XGBoost has much similarity with GBDT, especially on object function which is al
 
 ### 6.1. object function
 
+Besides the item calculating loss like GBDT, object function also add a item which calculates number of leaves of tree and each value of leaf(using regularization L1 and L2 respectively), which can decrease overfitting in training course.
+
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/object-function.png)
 
 
