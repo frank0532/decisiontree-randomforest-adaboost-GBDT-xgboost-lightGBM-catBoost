@@ -122,4 +122,10 @@ Don't use all samples but samples that have big loss on before decision tree and
 Merge two features into one when they have little relationship as below picture.
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/feature-bundling.png)
 
+## 8. CatBoost
+
+CatBoost are similar with XGBoost and lightGBM, but also make many modification to improve the model, the most famous modifying is about Categorical features.
+
+The value of categorical feature is calculated according to label values(that is Y) by below formula.
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/catboost.png)
 
