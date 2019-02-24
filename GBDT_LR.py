@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 
-data=pd.read_csv('E:/codes/housing.csv')
+data=pd.read_csv('../data/housing.csv')
 data=data.sample(frac=1.0,replace=False)
 splitPoint=len(data)//5
 Xtest,Xtrain,ytest,ytrain=data.iloc[:splitPoint,:-1].values,data.iloc[splitPoint:,:-1].values,\
