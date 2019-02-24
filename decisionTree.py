@@ -194,13 +194,13 @@ class decision_tree():
 
 if __name__=='__main__':
 # classifier tree
-    data=pd.read_excel('E:/codes/watermelon.xlsx')
+    data=pd.read_excel('../data/watermelon.xlsx')
     data['quality']=[1 if x=='good' else 0 for x in data['quality']]    
     train=data.loc[1:16]
     test=data.loc[[0,16]]
     DT=decision_tree()
 ## regression tree
-#    data=pd.read_excel('E:/codes/watermelonRegression.xlsx')
+#    data=pd.read_excel('../data/watermelonRegression.xlsx')
 #    train=data.loc[1:15]
 #    test=data.loc[[0,16]]
 #    DT=decision_tree('regression')
