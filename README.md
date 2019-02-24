@@ -55,7 +55,7 @@ Because of square loss function and gradient.
 
 ## 5. Merge random forest,adaboost and GBDT, code in "merge_model_simplified.py" and "merge_model_completed.py"
 
-## 5.1. Simplified:
+### 5.1. Simplified:
 
 >> Create “random forest” which includes n_1 “big Trees”;
 
@@ -65,7 +65,7 @@ Because of square loss function and gradient.
 
 Note: this method seems to run well until now;
 
-## 5.2. Completed: 
+### 5.2. Completed: 
 
 >> Create “random forest” which includes n_1 “big Trees”;
 
@@ -76,6 +76,12 @@ Note: this method seems to run well until now;
 >> Each tree in “GBDT” is trained according to “GBDT” completely;
 
 Note: this method seems to have some problems in “Adaboost” stage.
+
+## 6. XGBoost
+
+XGBoost has much similarity with GBDT, especially on object function which is also the most important modification for it; XGBoost also have a list decision trees in order (in training stage) and its final predict is also sum the predicts of all these decision trees, which is very similar with GBDT;
+
+### 6. object function
 
 
 
