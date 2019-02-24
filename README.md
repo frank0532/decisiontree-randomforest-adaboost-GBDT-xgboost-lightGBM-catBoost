@@ -44,6 +44,39 @@ At last why α and w should be like that?
 As both random forest and adaboost, GBDT also has many decision trees but the special is that the labelS for each tree are different and different labels for these decision trees are dependent in order. Take for example, this GBDT is formed by just 3 decision trees as below.
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/GBDT.png)
 
+Training(mainly used for regression): the first decision tree is trained just as common decision tree because "y1" of all samples are the same as label(that is y), after that "predict1" can be gotten by the first decision tree, then α1 can be gotten by linear regression on y and "predict1"; the second decision tree is trained with y2(that is y2=y-α1*predict1),after that "predict2" and "α2" can be gotten too; at last "predict3" and "α3".
+
+Predicting: the first decision tree predicts a new sample as predict1, the second decision tree predicts it as predict2 and also predict3; then final predict is "α1*predict1+α2*predict2+α3*predict3".
+
+Then why each label of decision tree should be like that?
+
+Because of square loss function and gradient.
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/square-gradient.png)
+
+## 5. Merge random forest,adaboost and GBDT, code in "merge_model_simplified.py" and "merge_model_completed.py"
+
+## 5.1. Simplified:
+
+>> Create “random forest” which includes n_1 “big Trees”;
+
+>> 	Each “big Tree” in “random forest” is created by n_2 trees which are combined by “GBDT”;
+
+>> Each tree in “GBDT” is trained by “sample_weight” according to “Adaboost”;
+
+Note: this method seems to run well until now;
+
+## 5.2. Completed: 
+
+>> Create “random forest” which includes n_1 “big Trees”;
+
+>> Each “big Tree” in “random forest” is created by n_2 “big Trees” which are combined by “Adaboost”;
+
+>> Each “big Tree” in “Adaboost” is created by n_3 trees which are combined by “GBDT”;
+
+>> Each tree in “GBDT” is trained according to “GBDT” completely;
+
+Note: this method seems to have some problems in “Adaboost” stage.
+
 
 
 
