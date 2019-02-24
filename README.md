@@ -80,8 +80,11 @@ Note: this method seems to have some problems in “Adaboost” stage.
 ## 6. XGBoost
 
 XGBoost has much similarity with GBDT, especially on object function which is also the most important modification for it; XGBoost also have a list decision trees in order (in training stage) and its final predict is also sum the predicts of all these decision trees, which is very similar with GBDT;
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/xgboost-0.png)
 
-### 6. object function
+### 6.1. object function
+
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/object-function.png)
 
 
 
