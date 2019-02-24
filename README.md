@@ -37,7 +37,6 @@ Then what is α and how to get it?
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/alpha.png)
 
 At last why α and w should be like that?
->>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/deduce-fx.png)
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/deduce-alpha-w.png)
 
 ## 4. GBDT, code in "GBDT.py" and "GBDT_LR.py"
