@@ -88,12 +88,38 @@ Besides the item calculating loss like GBDT, object function also add a item whi
 
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/object-function.png)
 
+then get 'w' of object function by minimizing object function value.
 
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/resolve-XGB-object-function.png)
 
+### 6.2. Shrinkage and Column Subsampling
 
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/shrinkage-subsample.png)
 
+### 6.3. Others
 
+Approximate Algorithm, Sparsity-aware Split Finding, Column Block for Parallel Learning and so on.
 
+## 7. lightGBM
 
+The basic structure is all most the same as XGBoost, but there are some difference between them for some details; and because of update of XGBoost and lightGBM, they learn from each other.
+
+### 7.1. growing the tree, leaf wise, used by both
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/leaf-wise.png)
+
+### 7.2. Histogram-based method, used by both
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/histogram.png)
+
+### 7.3. Ignoring sparse inputs, used by both
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/sparse.png)
+
+### 7.4. Subsampling the data, Gradient-based One-Side Sampling, used by lightGBM only
+
+Don't use all samples but samples that have big loss on before decision tree and a few small-loss sampels are used to train the new decision tree, like adaboost method a little.
+
+### 7.5. Exclusive Feature Bundling, used by lightGBM only
+
+Merge two features into one when they have little relationship as below picture.
+>>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/feature-bundling.png)
 
 
