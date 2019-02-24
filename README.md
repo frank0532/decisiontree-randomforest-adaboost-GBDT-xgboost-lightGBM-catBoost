@@ -18,14 +18,14 @@ When coming to the decision tree in Fig_1, why is "outlook" on the top rather th
 
 ## 2. Random Forest, code in "randomForest.py"
 
-Select n_r lines and n_c columns randomly from training data matrix to re-build a new data matrix; doing like this n times, n new data matrixes can be there, that is D1~Dn;
+Select n_r lines and n_c columns randomly from training data matrix to re-build a new data matrix; doing like this n times, n new data matrixes can be there, that is D1~Dn;Take for example, this random forest is formed by just 3 decision trees as below.
 >> ![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/randomForest.png)
 
-Each new data matrix "Di" (and its related label) can be used to train a decision tree, and at last n decision trees are there; these decision trees are grouped into a random forest; Now this random forest can be used to predict a new sample which would be predicted by each decision tree in the random forest independently; and the final predict of random forest is decision trees' majority vote result, i.e. decision trees' predicts are [1,1,1,-1], then the final predict is '1'; and if [-1,1,-1,-1], the final predict is '-1';
+Each new data matrix "Di" (and its related label) can be used to train a decision tree, and at last n decision trees are there; these decision trees are grouped into a random forest; Now this random forest can be used to predict a new sample which would be predicted by each decision tree in the random forest independently; and the final predict of random forest is decision trees' majority vote result, i.e. decision trees' predicts are [1,1,-1], then the final predict is '1'; and if [-1,1,-1], the final predict is '-1';
 
 ## 3. Adaboost, code in "adaboost.py"
 
-As random forest, adaboost also has many decision trees but difference is that these decision trees are dependent one by one in order because of the dependent sample weights for different decision trees. Take for example, an adaboost is formed by just 3 decision trees as below.
+As random forest, adaboost also has many decision trees but difference is that these decision trees are dependent one by one in order because of the dependent sample weights for different decision trees. Take for example, this adaboost is formed by just 3 decision trees as below.
 
 >> ![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/adaboost.png)
 
@@ -42,7 +42,7 @@ At last why α and w should be like that?
 
 ## 4. GBDT, code in "GBDT.py" and "GBDT_LR.py"
 
-As both random forest and adaboost, GBDT also has many decision trees but the special is that the labelS for each tree are different and different labels for these decision trees are dependent in order. Take for example, GBDT is formed by just 3 decision trees as below.
+As both random forest and adaboost, GBDT also has many decision trees but the special is that the labelS for each tree are different and different labels for these decision trees are dependent in order. Take for example, this GBDT is formed by just 3 decision trees as below.
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/GBDT.png)
 
 
