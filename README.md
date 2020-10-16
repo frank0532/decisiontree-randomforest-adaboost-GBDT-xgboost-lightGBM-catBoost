@@ -53,7 +53,7 @@ Then why each label of decision tree should be like that?
 Because of square loss function and gradient.
 >>![](https://github.com/frank0532/decision_tree_and_its_derivatives/blob/master/figs/square-gradient.png)
 
-## 5. Merge random forest,adaboost and GBDT, code in "merge_model_simplified.py" and "merge_model_completed.py"
+## 5. Merge random forest,adaboost and GBDT, code in "merge_model_simplified.py" and "merge_model_complicated.py"
 
 ### 5.1. Simplified:
 
@@ -65,7 +65,7 @@ Because of square loss function and gradient.
 
 Note: this method seems to run well until now;
 
-### 5.2. Completed: 
+### 5.2. Complicated: 
 
 >> Create “random forest” which includes n_1 “big Trees”;
 
